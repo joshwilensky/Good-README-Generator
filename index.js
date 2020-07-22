@@ -1,7 +1,7 @@
-var inquirer = require("inquirer");
-var fs = require("fs");
-var util = require("util");
-var writeFileAsync = util.promisify(fs.writeFile);
+const inquirer = require("inquirer");
+const fs = require("fs");
+const util = require("util");
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // Array of questions for the user
 function promptUser() {
@@ -305,3 +305,35 @@ limitations under the License.`;
   }
 
   return `# ${answers.projectTitle}${badge}
+---
+## Table of Contents
+---
+### [Description](#Description)
+${showScreenshots ? "### [Screenshots](#Screenshots)" : ""}
+### [Installation](#Installation)
+### [Usage](#Usage)
+${showLicense ? "### [License](#License)" : ""}
+### [Contributing](#Contributing)
+### [Tests](#Tests)
+### [Questions](#Questions)
+### [Github](#Github)
+---
+### <a name="Description"></a>Description
+${answers.description}
+${showScreenshots ? '### <a name="Screenshots"></a>Screenshots' : ""}
+${answers.screenshots}
+### <a name="Installation"></a>Installation
+${answers.installation}
+### <a name="Usage"></a>Usage
+${answers.usage}
+${showLicense ? '### <a name="License"></a>License' : ""}
+${answers.license}
+### <a name="Contributing"></a>Contributing
+${answers.contributing}
+### <a name="Tests"></a>Tests
+${answers.tests}
+### <a name="Questions"></a>Questions
+${answers.questions}
+### <a name="Github"></a>Github
+${answers.github}`;
+}
