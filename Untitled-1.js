@@ -888,7 +888,7 @@ async function init() {
         // Rather than writing to the root of the file and overwriting this projects README, user's documents are written to their own folder
         await writeFileAsync("./READMElocation/README.md", README);
 
-        console.log("Successfully wrote to README.md.");
+        console.log("You've successfully wrote a new README.md!");
     } catch (err) {
         console.log(err);
     }

@@ -3,7 +3,7 @@ const fs = require("fs");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 
-// Array of questions for the user
+// An array of questions for the user
 function promptUser() {
   return inquirer.prompt([{
       type: "input",
@@ -11,7 +11,7 @@ function promptUser() {
       message: "Please enter your name:",
     },
     {
-      type: "number",
+      type: "input",
       name: "year",
       message: "What year is it?",
     },
@@ -33,7 +33,7 @@ function promptUser() {
     {
       type: "input",
       name: "installation",
-      message: "What installations did you use to build your README file?",
+      message: "Which installations did you use to build your README file?",
     },
     {
       type: "input",
@@ -47,10 +47,9 @@ function promptUser() {
       choices: ["MIT", "BSD 3-Clause License", "Apache", "None"],
     },
     {
-      type: "confirm",
-      name: "contributing",
-      message: "Would you like people to contribute to your work?",
-      default: ["Y/N"],
+      type: "input",
+      name: "contribution",
+      message: 'Did anyone contribute to your project?',
     },
     {
       type: "input",
@@ -337,3 +336,20 @@ ${answers.questions}
 ### <a name="Github"></a>Github
 ${answers.github}`;
 }
+
+async function init() {
+  try {
+    const answers = await promptUser();
+
+    const README = generateREADME(answers);
+    // Rather than writing to the root of the file and overwriting this projects README, user's documents are written to their own folder
+    await writeFileAsync("./README-Location/README.md", README);
+
+    console.log("You've successfully wrote a new README.md!");
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+// function call to initialize program
+init();

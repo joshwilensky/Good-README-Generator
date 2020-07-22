@@ -1,4 +1,4 @@
-# na[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+# d[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 ---
 ## Table of Contents
 ---
@@ -13,27 +13,27 @@
 ### [Github](#Github)
 ---
 ### <a name="Description"></a>Description
-na
+d
 ### <a name="Screenshots"></a>Screenshots
-na
+d
 ### <a name="Installation"></a>Installation
-na
+d
 ### <a name="Usage"></a>Usage
-na
+d
 ### <a name="License"></a>License
 MIT License
-Copyright (c) -- September 2020 -- jw
-    
+Copyright (c) d -- d
+  
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-    
+  
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-    
+  
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -42,10 +42,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ### <a name="Contributing"></a>Contributing
-na
+undefined
 ### <a name="Tests"></a>Tests
-na
+d
 ### <a name="Questions"></a>Questions
-joshwilensky@gmail.com
+d
 ### <a name="Github"></a>Github
-https://github.com/joshwilensky/README.md-Generator
+https://github.com/joshwilensky/Good-README-Generator
