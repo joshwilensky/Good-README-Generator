@@ -296,3 +296,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.`;
   }
+
+  // If user doesn't want to add the license
+  let showLicense = answers.license !== "None";
+
+  if (answers.license === "None") {
+    answers.license = "";
+  }
+
+  return `# ${answers.projectTitle}${badge}
