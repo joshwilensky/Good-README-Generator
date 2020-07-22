@@ -8,7 +8,7 @@ Your task is to create a command-line application that dynamically generates a p
 node index.js
 ```
 
-Because this is a command-line application that won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates the functionality of your application. Revisit the Screencastify Tutorial in the prework as a refresher on how to record video from your computer.
+Because this is a command-line application that won’t be deployed, you’ll also need to provide a link to a walk-through video that demonstrates the functionality of your application. Revisit the Screencastify Tutorial in the pre-work as a refresher on how to record video from your computer.
 
 ## User Story
 
@@ -100,9 +100,10 @@ We would like you to have more than 200 commits by graduation, so commit early a
 
 You are required to submit the following:
 
-- A walkthrough video demonstrating the functionality of the application.
+- A walk-through video demonstrating the functionality of the application.
 
 - A sample README.md file for a project repository generated using your application.
 
 - The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+
 # Good-README-Generator
