@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "email-validator": "^2.0.4",
     "google-address-autocomplete": "^1.4.0",
     "inquirer": "^7.3.2"
   }

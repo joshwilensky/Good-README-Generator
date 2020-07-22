@@ -5,20 +5,16 @@ var writeFileAsync = util.promisify(fs.writeFile);
 
 // Array of questions for the user
 function promptUser() {
-  return inquirer.prompt([{
-      type: "input",
-      name: "name",
-      message: "Please enter your name:"
-    },
+  return inquirer.prompt([
     {
       type: "input",
-      name: "month",
-      message: "What month did you complete this project?",
+      name: "name",
+      message: "Please enter your name:",
     },
     {
       type: "number",
       name: "year",
-      message: "What year did you complete this project?",
+      message: "What year is it?",
     },
     {
       type: "input",
@@ -33,43 +29,59 @@ function promptUser() {
     {
       type: "input",
       name: "screenshots",
-      message: "Please enter any URLs for screenshots relevant to this project, or type <skip>. If you type <skip>, that portion of the document will not generate.",
+      message:
+        "Please enter any URLs for screenshots relevant to this project; or type <skip>. If you type <skip>, the screenshot portion of the document will not generate.",
     },
     {
       type: "input",
       name: "installation",
-      message: "What instructions are necessary to install your project?",
+      message: "What installations did you use to build your README file?",
     },
     {
       type: "input",
       name: "usage",
-      message: "How would you describe the usage of your project:",
+      message: "Describe the usage of your project:",
     },
     {
       type: "list",
       name: "license",
-      message: "Which License would you like to use? If you choose not to include a license, that portion of the document will not generate:",
+      message:
+        "Which license will you be using for your README file? (If you choose not to include a license, that portion of the document will not generate):",
       choices: ["MIT", "GNU General Public", "Apache", "None"],
     },
     {
-      type: "input",
+      type: "confirm",
       name: "contributing",
-      message: "If you would like people to contribute to your work, please explain how they can:",
+      message: "Would you like people to contribute to your work?",
+      default: ["Y/N"],
     },
     {
       type: "input",
       name: "tests",
-      message: "Please describe any tests you conducted with the proper results:",
+      message:
+        "Please describe the tests you generated with the proper results:",
     },
     {
       type: "input",
       name: "questions",
-      message: "Please provide your email for questions related to the project:",
+      message:
+        "Please provide your email for questions related to the project:",
     },
     {
       type: "input",
       name: "github",
-      message: "Please enter your GitHub username and repository URL for this project:",
+      message:
+        "Please enter your GitHub username and repository URL for this project:",
     },
   ]);
 }
+
+// function to write README file
+
+function generateREADME(answers) {
+    // Logic for if the user declares they don't want to include screenshots in their README
+    let showScreenshots = answers.screenshots !== "<skip>";
+
+    if (answers.screenshots === "<skip>") {
+        answers.screenshots = "";
+    }
