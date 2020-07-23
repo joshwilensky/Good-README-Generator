@@ -89,7 +89,7 @@ function generateREADME(answers) {
 
   if (answers.license === "MIT") {
     badge =
-      "[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)";
+      "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     answers.license = `MIT License
 Copyright (c) ${answers.year} ${answers.name}
   
@@ -113,7 +113,7 @@ SOFTWARE.`;
   }
   if (answers.license === "BSD License") {
     badge =
-      "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+      "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]";
     answers.license = `BSD 3-Clause License
     Note: This license has also been called the "New BSD License" or "Modified BSD License". See also the 2-clause BSD License.
 
