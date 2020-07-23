@@ -111,10 +111,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.`;
   }
-  if (answers.license === "BSD License") {
+  if (answers.license === "BSD") {
     badge =
-      "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]";
+      "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
     answers.license = `BSD 3-Clause License
+    
     Note: This license has also been called the "New BSD License" or "Modified BSD License". See also the 2-clause BSD License.
 
     Copyright (c) ${answers.year} -- ${answers.name}

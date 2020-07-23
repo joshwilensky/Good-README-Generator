@@ -1,4 +1,4 @@
-# JW
+# None
 ---
 ## Table of Contents
 ---
@@ -6,7 +6,7 @@
 ### [Screenshots](#Screenshots)
 ### [Installation](#Installation)
 ### [Usage](#Usage)
-### [License](#License)
+
 ### [Contributing](#Contributing)
 ### [Tests](#Tests)
 ### [Questions](#Questions)
@@ -20,8 +20,8 @@
 
 ### <a name="Usage"></a>Usage
 
-### <a name="License"></a>License
-BSD
+
+
 ### <a name="Contributing"></a>Contributing
 undefined
 ### <a name="Tests"></a>Tests
