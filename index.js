@@ -1,11 +1,13 @@
-const inquirer = require("inquirer");
+var inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
+const generateMarkdown = require("./generateMarkdown");
 
 // An array of questions for the user
 function promptUser() {
-  return inquirer.prompt([{
+  return inquirer.prompt([
+    {
       type: "input",
       name: "name",
       message: "Please enter your name:",
@@ -13,7 +15,7 @@ function promptUser() {
     {
       type: "input",
       name: "year",
-      message: "What year is it?",
+      message: "Please enter the current year:",
     },
     {
       type: "input",
@@ -28,7 +30,8 @@ function promptUser() {
     {
       type: "input",
       name: "screenshots",
-      message: "Please enter any URLs for screenshots relevant to this project; or type <skip>. If you type <skip>, the screenshot portion of the document will not generate.",
+      message:
+        "Please enter any URLs for screenshots relevant to this project; or type <skip>. If you type <skip>, the screenshot portion of the document will not generate.",
     },
     {
       type: "input",
@@ -43,32 +46,35 @@ function promptUser() {
     {
       type: "list",
       name: "license",
-      message: "Which license will you be using for your README file? (If you decide not to include a license, that section of the document will not generate)",
-      choices: ["MIT", "BSD 3-Clause License", "Apache", "None"],
+      message:
+        "Which License would you like to use? If you choose not to include a license, that portion of the document will not generate.",
+      choices: ["MIT", "BSD", "Apache", "None"],
     },
     {
       type: "input",
       name: "contribution",
-      message: 'Did anyone contribute to your project?',
+      message: "Did anyone contribute to your project? If so, please specify.",
     },
     {
       type: "input",
       name: "tests",
-      message: "Please describe the tests you generated with the proper results:",
+      message:
+        "Please describe the tests you generated with the proper results:",
     },
     {
       type: "input",
       name: "questions",
-      message: "Please provide your email for questions related to the project:",
+      message:
+        "Please provide your email for questions related to the project:",
     },
     {
       type: "input",
       name: "github",
-      message: "Please enter your GitHub username and repo URL for this project:",
+      message:
+        "Please enter your GitHub username and repo URL for this project:",
     },
   ]);
 }
-
 // function to write README file
 
 function generateREADME(answers) {
@@ -79,11 +85,13 @@ function generateREADME(answers) {
     answers.screenshots = "";
   }
 
+  let badge = "";
+
   if (answers.license === "MIT") {
     badge =
       "[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)";
     answers.license = `MIT License
-Copyright (c) ${answers.year} -- ${answers.name}
+Copyright (c) ${answers.year} ${answers.name}
   
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -284,7 +292,7 @@ comment syntax for the file format. We also recommend that a
 file or class name and description of purpose be included on the
 same "printed page" as the copyright notice for easier
 identification within third-party archives.
-Copyright ${answers.year} -- ${answers.name}
+Copyright (c) ${answers.year} -- ${answers.name}
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -337,6 +345,7 @@ ${answers.questions}
 ${answers.github}`;
 }
 
+// function to initialize program
 async function init() {
   try {
     const answers = await promptUser();
@@ -345,7 +354,7 @@ async function init() {
     // Rather than writing to the root of the file and overwriting this projects README, user's documents are written to their own folder
     await writeFileAsync("./README-Location/README.md", README);
 
-    console.log("You've successfully wrote a new README.md!");
+    console.log("You did it!!! You've successfully created a README file!!!");
   } catch (err) {
     console.log(err);
   }
